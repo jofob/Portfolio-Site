@@ -1,0 +1,35 @@
+body {
+	background-color: #66CC99;
+	margin: 0;
+	padding: 0;
+	height: 2000px;
+}
+header{
+	width: 100%
+}
+
+#frontHead{
+	position: fixed;
+	height: 50%;
+	background-color: #FFFFFF;
+	padding: 10px;
+		-webkit-transition: height .5s;
+	    -moz-transition: height .5s;
+	    -ms-transition: height .5s;
+    transition: height .5s;
+}
+
+#logo{
+	width: 60%;
+	max-width: 500px;
+	height: 100%;
+	background: url(../img/logo.png) no-repeat center center;
+	background-size: contain;
+	margin: 0 auto;
+
+
+}
+
+.small{
+	height: 100px !important;
+}
