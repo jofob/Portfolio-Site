@@ -4,14 +4,19 @@ body {
 	padding: 0;
 	height: 2000px;
 }
+
 header{
 	width: 100%
 }
 
 #frontHead{
+
 	position: fixed;
-	height: 50%;
-	background-color: #FFFFFF;
+	top: 0;
+	height: 400px;
+	background-color:#F64747;
+	background-size: cover;
+	z-index:100;
 	padding: 10px;
 		-webkit-transition: height .5s;
 	    -moz-transition: height .5s;
@@ -32,4 +37,21 @@ header{
 
 .small{
 	height: 100px !important;
+}
+
+#pieces {
+	position: absolute;
+	top: 525px;
+	width: 100%;
+	text-align: center;
+}
+
+.portPiece {
+	position: relative;
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	background-color: #ff0000;
+	margin: 10px !important;
+	vertical-align: top;
 }
