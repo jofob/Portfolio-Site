@@ -1,8 +1,20 @@
+/* 
+GOOGLE FONTS
+font-family: 'Oswald', sans-serif;
+font-family: 'Montserrat', sans-serif;
+ */
+ 
 body {
 	background-color: #66CC99;
 	margin: 0;
 	padding: 0;
 	height: 2000px;
+	font-family: 'Oswald', sans-serif;
+}
+
+h3{
+	font-weight: normal;
+	font-size: 1.5em;
 }
 
 header{
@@ -10,7 +22,6 @@ header{
 }
 
 #frontHead{
-
 	position: fixed;
 	top: 0;
 	height: 400px;
@@ -18,28 +29,106 @@ header{
 	background-size: cover;
 	z-index:100;
 	padding: 10px;
-		-webkit-transition: height .5s;
-	    -moz-transition: height .5s;
-	    -ms-transition: height .5s;
-    transition: height .5s;
+		-webkit-transition: height .55s;
+	    -moz-transition: height .55s;
+	    -ms-transition: height .55s;
+    transition: height .55s;
+}
+
+#tag{
+	position: relative;
+	width: 60%;
+	height: 100px;
+	top: 350px;
+	left: 50px;
+	max-height: 45px;
+	background: url(../img/tag.png) no-repeat;
+	background-size: contain;
+	background-position: center top;
+		-webkit-transition: opacity .25s;
+	    -moz-transition: opacity .25s;
+	    -ms-transition:  opacity .25s;
+    transition: opacity .25s;
 }
 
 #logo{
+	position: relative;
+	float: left;
 	width: 60%;
-	max-width: 500px;
 	height: 100%;
-	background: url(../img/logo.png) no-repeat center center;
+	background: url(../img/logoPad.png) no-repeat center center;
 	background-size: contain;
-	margin: 0 auto;
+	left: 50px;
+		-webkit-transition:height .7s, top .7s, left .7s, width .5s;
+	    -moz-transition:height .7s, top .7s, left .7s, width .5s;
+	    -ms-transition: height .7s, top .7s, left .7s, width .5s ;
+    transition: height .7s, top .7s, left .7s, width .5s ;
+}
 
 
+#nav {
+	position: relative;
+	width: 20%;
+ 	float: right;
+	margin-top: 100px;
+	margin-left: 75px;
+	background-color: #00ff00;
+	opacity: 1;
+		-webkit-transition: opacity .25s;
+	    -moz-transition: opacity .25s;
+	    -ms-transition:  opacity .25s;
+    transition: opacity .25s;
+}
+
+.navButt{
+	text-align: left;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+	display: block;
+	margin: 10px;
+	width: 100px;
+	height: 1.25em;
+	padding: 5px;
+	background-color: #0000ff;
+	color: #ffffff;
+
+}
+
+.clear{
+	opacity: 0 !important;
+}
+
+.navSmall{
+	top: 0px !important;
+	width: 350px !important;
+	margin: 0px !important;
+	margin-top: -25px !important;
+}
+
+.navSmall div{
+	width: 75px;
+	font-size: .75em;
+	margin: 5px;
+	text-align: center;
+	display: inline-block;
 }
 
 .small{
+	height: 80px !important;
+}
+
+.smallLogo{	
+	width: 150px !important;
+	top: -10px !important;
+	left: 15px !important;
 	height: 100px !important;
 }
 
-#pieces {
+section{
+	width: 
+}
+
+#portfolio {
 	position: absolute;
 	top: 525px;
 	width: 100%;

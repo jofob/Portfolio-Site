@@ -3,9 +3,16 @@ document.body.onload = setup;
 /* -GLOBAL VARIABLES- */
 var header;
 var pieces;
+var logo;
+var nav;
+var tag;
+var wasBig = true;
 
 function setup(){
 	header = document.getElementById("frontHead");
+	logo = document.getElementById("logo");
+	nav = document.getElementById("nav");
+	tag = document.getElementById("tag");
 	buildPage();
 	window.addEventListener('scroll', function(event){
 			var distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -19,14 +26,32 @@ function setup(){
 
 function shrinkHeader(){
 	header.classList.add("small");
-}
+	logo.classList.add("smallLogo");
+	tag.classList.add("clear");
+	if (wasBig){
+		nav.classList.add("clear");
+		wasBig = false;
+	}
+	setTimeout(function(){ 
+		nav.className = "navSmall"}, 400);	
+	}
 
 function reset(){
 	header.classList.remove("small");
-}
+	logo.classList.remove("smallLogo");
+	nav.style.opacity="0";
+	wasBig=true;
+	setTimeout(function(){ 
+		nav.className = "";
+		nav.style.opacity="1";
+		tag.classList.remove("clear");}, 600);	
+
+	}
+	
+
 
 function buildPage(){
-	pieces = document.getElementById("pieces")
+	pieces = document.getElementById("portfolio")
 	var idx = 0;
 	while (idx < portPieces.length){
 		var currPiece = portPieces[idx];
