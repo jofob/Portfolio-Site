@@ -3,11 +3,11 @@ var portPieces = [
 
 		{
 
-			"title":  "goFish",
-			"desc":   "Puzzle game built in javaScript",
+			"title":  "GO FISH",
+			"desc":   "Simple, interactive fishing game. Built in HTML5 canvas using Processing.js ",
 			"alt":    "go fish",
 			"cat":    "prog",
-			"source":   "/sokoban.html",
+			"source":   "/sub/fish.html",
 			"thumb":  ["img/fishThumb.jpg"]},
 		{
 
@@ -24,5 +24,22 @@ var portPieces = [
 			"alt":    "text",
 			"cat":    "group",
 			"source":   "link",
+			"thumb":  [""]},
+		{
+
+			"title":  "piece",
+			"desc":   "words",
+			"alt":    "text",
+			"cat":    "group",
+			"source":   "link",
+			"thumb":  [""]},
+		{
+
+			"title":  "piece",
+			"desc":   "words",
+			"alt":    "text",
+			"cat":    "group",
+			"source":   "link",
 			"thumb":  [""]}
+			
 ]
