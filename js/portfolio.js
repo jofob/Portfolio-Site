@@ -3,6 +3,7 @@ document.body.onload = setup;
 /* -GLOBAL VARIABLES- */
 var header;
 var pieces;
+var overlay;
 var logo;
 var nav;
 var tag;
@@ -23,6 +24,7 @@ $(function() {
 		  });
 		});
 
+
 		
 		
 function setup(){
@@ -30,6 +32,8 @@ function setup(){
 	logo = document.getElementById("logo");
 	nav = document.getElementById("nav");
 	tag = document.getElementById("tag");
+	overlay = document.getElementById("overlay");
+	overlay.onclick = hide;
 	buildPage();
 	window.addEventListener('scroll', function(event){
 			var distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -39,6 +43,16 @@ function setup(){
 				reset();
 			}
 		});
+}
+
+function hide(){
+	this.style.visibility = "hidden";
+}
+
+function revealOverlay(evt){
+	var target = evt.target;
+	console.log(target);
+	overlay.style.visibility = "visible";
 }
 
 function shrinkHeader(){
@@ -62,7 +76,6 @@ function reset(){
 		nav.className = "";
 		nav.style.opacity="1";
 		tag.classList.remove("clear");}, 600);	
-
 	}
 	
 
@@ -74,9 +87,20 @@ function buildPage(){
 		var currPiece = portPieces[idx];
 		var div = document.createElement('div');
 		pieces.appendChild(div);
-		div.ID = "p"+ toString(idx);
-		div.className= "portPiece";
-		div.innerHTML = currPiece.desc;
+		var imgDiv = document.createElement('div');
+		div.appendChild(imgDiv);
+		div.className = "portPiece";
+		imgDiv.className = "portImg";
+		imgDiv.style.background = "url("+ currPiece.thumb + ")";
+		var title = document.createElement("h2");
+		var titleText = document.createTextNode(currPiece.title);
+		title.appendChild(titleText);
+		div.appendChild(title);
+		var desc = document.createElement('p');
+		var descText = document.createTextNode(currPiece.desc);
+		desc.appendChild(descText);
+		div.appendChild(desc);
+		div.onclick = revealOverlay;
 		idx++; 
 	}
 }

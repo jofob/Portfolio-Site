@@ -3,26 +3,26 @@ var portPieces = [
 
 		{
 
-			"title":  "Sokoban",
+			"title":  "goFish",
 			"desc":   "Puzzle game built in javaScript",
-			"alt":    "Sokoban",
+			"alt":    "go fish",
 			"cat":    "prog",
-			"href":   "/sokoban.html",
-			"imgs":  ["dest,dest"]},
+			"source":   "/sokoban.html",
+			"thumb":  ["img/fishThumb.jpg"]},
 		{
 
 			"title":  "MemoryBox",
 			"desc":   "Assistive, comfort technology for alzheimer's patients",
 			"alt":    "text",
 			"cat":    "group",
-			"href":   "link",
-			"imgs":  ["dest,dest"]},
+			"source":   "link",
+			"thumb":  [""]},
 		{
 
 			"title":  "piece",
 			"desc":   "words",
 			"alt":    "text",
 			"cat":    "group",
-			"href":   "link",
-			"imgs":  ["dest,dest"]}
+			"source":   "link",
+			"thumb":  [""]}
 ]
