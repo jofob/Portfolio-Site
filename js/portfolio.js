@@ -33,7 +33,7 @@ function setup(){
 	nav = document.getElementById("nav");
 	tag = document.getElementById("tag");
 	overlay = document.getElementById("overlay");
-	overlay.onclick = hide;
+	overlay.onclick = hideOverlay;
 	buildPage();
 	window.addEventListener('scroll', function(event){
 			var distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -45,13 +45,12 @@ function setup(){
 		});
 }
 
-function hide(){
-	this.style.visibility = "hidden";
+function hideOverlay(){
+	overlay.style.visibility = "hidden";
 }
 
 function revealOverlay(evt){
 	var target = evt.target;
-	console.log(target);
 	overlay.style.visibility = "visible";
 }
 

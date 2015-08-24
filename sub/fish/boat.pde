@@ -8,14 +8,14 @@ PImage boat;
 PImage hook;
 PImage fish;
 PImage fishGhost;
-wave3 = loadImage("img/wave3.png");
-wave2 = loadImage("img/wave2.png");
-wave1 = loadImage("img/wave1.png");
-boat = loadImage("img/boatFlip.png");
-hook = loadImage("img/hook.png");
-fish = loadImage("img/fishFlip.png");
-fishGhost = loadImage("img/fishGhost.png");
-/* @pjs preload = "img/boat.png", "img/boatFlip.png","img/fishFlip.png","img/fish.png", "img/deadFish.png" */
+wave3 = loadImage("sub/fish/img/wave3.png");
+wave2 = loadImage("sub/fish/img/wave2.png");
+wave1 = loadImage("sub/fish/img/wave1.png");
+boat = loadImage("sub/fish/img/boatFlip.png");
+hook = loadImage("sub/fish/img/hook.png");
+fish = loadImage("sub/fish/img/fishFlip.png");
+fishGhost = loadImage("sub/fish/img/fishGhost.png");
+/* @pjs preload = "sub/fish/img/boat.png", "sub/fish/img/boatFlip.png","sub/fish/img/fishFlip.png","sub/fish/img/fish.png", "sub/fish/img/deadFish.png" */
 
 
 //--setting general global variables--//
@@ -166,14 +166,14 @@ void moveBoat(){
 		bcoos[0]--;
 		if ( bcoos[0] == 0 ){
 			bRight = false;
-			boat = loadImage("img/boat.png")
+			boat = loadImage("sub/fish/img/boat.png")
 			lineOffset = 0; 
 		}
 	} else { 
 		bcoos[0]++;
 		if ( bcoos[0] == 400 ){
 			bRight = true;
-			boat = loadImage("img/boatFlip.png");
+			boat = loadImage("sub/fish/img/boatFlip.png");
 			lineOffset = 200;
 		}
 	}
@@ -289,11 +289,11 @@ void moveFish(){
 	if (changeMind){
 		if (fRight == true){
 			fRight = !fRight;
-			fish = loadImage("img/fish.png");
+			fish = loadImage("sub/fish/img/fish.png");
 			fishMouthOffset = 71;
 		} else {
 			fRight = !fRight;
-			fish = loadImage("img/fishFlip.png");
+			fish = loadImage("sub/fish/img/fishFlip.png");
 			fishMouthOffset = 0;
 		}
 	}
@@ -307,14 +307,14 @@ void moveFish(){
 		fishCoos[0] = fishCoos[0] - 2;
 		if ( fishCoos[0] <= 0 ){
 			fRight = false;
-			fish = loadImage("img/fish.png");
+			fish = loadImage("sub/fish/img/fish.png");
 			fishMouthOffset = 71;
 		}
 	} else { 
 		fishCoos[0] = fishCoos[0] + 2;
 		if ( fishCoos[0] >= 525 ){
 			fRight = true;
-			fish = loadImage("img/fishFlip.png");
+			fish = loadImage("sub/fish/img/fishFlip.png");
 			fishMouthOffset= 0;
 		}
 	}
@@ -341,7 +341,7 @@ void checkCatch(){
 	
 	if ( hookX < fishMouthX + 10  && hookX > fishMouthX - 10 ) {
 		if (hookY < fishMouthY + 10  && hookY > fishMouthY - 10  ){
-			fish = loadImage("img/deadFish.png");
+			fish = loadImage("sub/fish/img/deadFish.png");
 			fishNotCaught = false ;
 		}	
 	}
@@ -363,18 +363,18 @@ void reelFish(){
 void mousePressed(){
 	
 	//--clicking on the boat, raises or lowers the line--//
-	if ( bcoos[0] < mouseX && (bcoos[0]+200) > mouseX  && bcoos[1] < mouseY && (bcoos[1] + 200) > mouseY) {
+	if ( (bcoos[0]-100) < mouseX && (bcoos[0]+100) > mouseX  && (bcoos[1]-60) < mouseY && (bcoos[1] + 60) > mouseY) {
 		lineDown = !lineDown;
 		
 	//--clicking on the fish ghost when the fish is caught, reanimates the fish --//
-	} else if ( 215 < mouseX && mouseX < 365 && 40 < mouseY && mouseY < 128 && !fishAlive){
+	} else if ( 115 < mouseX && mouseX < 265 && 40 < mouseY && mouseY < 128 && !fishAlive){
 		fishAlive = true;
 		fishNotCaught = true;
 		fishCoos[0] = 200;
 		fishCoos[1] = 500;
 		fUp = false;
 		fRight = true;
-		fish = loadImage("img/fishFlip.png");
+		fish = loadImage("sub/fish/img/fishFlip.png");
 	}
 }
 	
